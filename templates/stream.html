@@ -4,23 +4,23 @@
 
 
 <form method="POST" action="" novalidate>
-  {{ form.hidden_tag() }}
+    {{ form.hidden_tag() }}
 
-  <div>
-    {{ form.plant.label }}
-    {{ form.plant() }}
-  </div>
-  <div>
-    {{ form.rating.label }}
-    {{ form.rating() }}
-  </div>
-  <div>
-    {{ form.text.label }}
-    {{ form.text() }}
-  </div>
+    <div>
+      {{ form.plant.label }}
+      {{ form.plant() }}
+    </div>
+    <div>
+      {{ form.rating.label }}
+      {{ form.rating() }}
+    </div>
+    <div>
+      {{ form.text.label }}
+      {{ form.text() }}
+    </div>
 
-  {{ form.submit() }}
-</form>
+    {{ form.submit() }}
+  </form>
 
 
 {% for reviews in stream %}
@@ -37,11 +37,11 @@
                       </div>
                       <div>
                         {{ form.rating.label }}
-                        <input id="rating" name="rating" type="text" value="{{reviews.rating}}">
+                        {{ form2.rating() }}
                       </div>
                       <div>
                         {{ form2.text.label }}
-                        <input id="text" name="text" type="text" value="{{reviews.text}}">
+                        {{ form2.text() }}
                       </div>
                       <div>
                           <input hidden="hidden"  id="idNumber" name="idNumber" type="text" value="{{reviews.id}}">
@@ -49,22 +49,11 @@
                       <input id="submit" name="submit" type="submit" value="Save">
                     </form>
               </span>
-          <p class="card-text"></p>{{ reviews.plant }}</p>
-          <p class="card-text"></p>{{ reviews.rating }}</p>
-          <p class="card-text"></p>{{ reviews.text}}</p>
+          <p class="card-text">{{ reviews.plant }}</p>
           <button class='editButton' >Edit</button>
           <a  href="{{url_for('delete', idNumber = reviews.id)}}" title="delete">Delete</a>
     
         </div>
-
-        <input id="submit" name="submit" type="submit" value="Save">
-      </form>
-    </span>
-    <p class="card-text">{{ reviews.plant }}</p>
-    <button class='editButton'>Edit</button>
-    <a href="{{url_for('delete', idNumber = reviews.id)}}" title="delete">Delete</a>
-
-  </div>
-</div>
+      </div>
 {% endfor %}
 {% endblock %}
