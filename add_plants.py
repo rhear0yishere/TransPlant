@@ -1,4 +1,4 @@
-from peewee import * 
+from peewee import *
 from models import Plant
 
 plants = [{"image": "static/Abutilon.jpg",
@@ -19,7 +19,7 @@ plants = [{"image": "static/Abutilon.jpg",
            "light": 4,
            "Difficulty": 3
            },
-           {"image": "static/Crocus.jpg",
+          {"image": "static/Crocus.jpg",
            "species": "Crocus",
            "watering": 3,
            "light": 4,

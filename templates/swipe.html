@@ -7,13 +7,13 @@
     <div class="card swipeCard">
         <div class="card-header species">
         </div>
-        <div class ="plantImageDiv" >
-            <img class="plantImage " src="{{url_for('static', filename='lizard.jpg')}}"/>
+        <div class="plantImageDiv">
+            <img class="plantImage " src="{{url_for('static', filename='lizard.jpg')}}" />
         </div>
         <ul class="list-group list-group-flush">
-                <li class="list-group-item difficulty">Difficulty</li>
-                <li class="list-group-item water">Water</li>
-                <li class="list-group-item light">light</li>
+            <li class="list-group-item difficulty">Difficulty</li>
+            <li class="list-group-item water">Water</li>
+            <li class="list-group-item light">light</li>
         </ul>
         <div class="swipedThru" style="display:none">You swiped through all the cards!</div>
         <div class="btn-group">
@@ -23,13 +23,13 @@
     </div>
     <div>
         <ul class="yasPlants">
-                <h1>Your Bebez</h1>
+            <h1>Your Bebez</h1>
         </ul>
     </div>
-    <form method="POST" action="">
+    <form method="POST">
         {{ form3.hidden_tag() }}
         <input hidden="hidden" id="userPlants" name="userPlants" type="text" value="">
-        <button class= "reviewButtons" id= "submit" type="submit" >Save ya Plantz</button>
+        <button class="reviewButtons" id="submit" type="submit">Save ya Plantz</button>
     </form>
 </div>
 {% endblock %}

@@ -1,9 +1,7 @@
-/* ! Background image for signin  */
-
-body{
+body {
     font-family: 'Exo', sans-serif;
-    
 }
+
 .backgroundImage {
     background-image: url("/static/carousel/plant1.jpeg");
     background-repeat: no-repeat;
@@ -12,7 +10,6 @@ body{
     height: 100vh;
     background-size: cover;
 }
-
 
 /* ! Background image for signup  */
 .signupBackgroundImage {
@@ -24,13 +21,12 @@ body{
     background-size: cover;
 }
 
-
 .swipeBackgroundImage {
     background-image: url("/static/carousel/Planting.jpeg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    color:white;
+    color: white;
     text-align: center;
 }
 
@@ -39,8 +35,7 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-   
-    color:white;
+    color: white;
     text-align: center;
 }
 
@@ -48,32 +43,33 @@ body{
     justify-content: center;
 }
 
-
-.form-control{
-    width:50%;
+.form-control {
+    width: 50%;
     display: inline-block;
 }
-.card{
+
+.card {
     margin-left: 400px;
-    margin-right:400px;
-    margin-bottom:10px;
-    color:black;
+    margin-right: 400px;
+    margin-bottom: 10px;
+    color: black;
     text-align: center;
 
 }
 
-.reviewBackground{
-    background-color: rgba(249, 252, 255, 0.721) ; 
+.reviewBackground {
+    background-color: rgba(249, 252, 255, 0.721);
 
 }
 
-.reviewForm{
-   background-color: rgba(15, 99, 91, 0.762) ; 
-   width:75%;
-   margin: auto;
-   margin-bottom: 30px;
-   padding: 30px;
+.reviewForm {
+    background-color: rgba(15, 99, 91, 0.762);
+    width: 75%;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 30px;
 }
+
 .reviewForm input {
     width: 75%;
     text-align: center;
@@ -83,43 +79,40 @@ body{
     width: 75%;
 }
 
- .savedPlants{
-    background-color: rgba(15, 99, 91, 0.762) ; 
-    width:50%;
+.savedPlants {
+    background-color: rgba(15, 99, 91, 0.762);
+    width: 50%;
     margin: auto;
- }
-
-
-
-nav{
-    background-color: rgba(15, 99, 91, 0.762)!important ; 
-
-
 }
 
-.yasPlants{
-    width:30%;
+nav {
+    background-color: rgba(15, 99, 91, 0.762) !important;
+}
+
+.yasPlants {
+    width: 30%;
     margin: auto;
-    background-color: rgba(15, 99, 91, 0.345)!important ; 
+    background-color: rgba(15, 99, 91, 0.345) !important;
     list-style: none;
 }
 
-nav a{
-    color:white !important;
+nav a {
+    color: white !important;
     font-weight: bolder !important;
 }
-.reviewButtons{
-    background-color:rgba(15, 99, 91, 0.66);
+
+.reviewButtons {
+    background-color: rgba(15, 99, 91, 0.66);
     border: 2px solid rgb(234, 240, 234);
     font-weight: bold;
     font-size: 13px;
     padding: 10px 24px;
-    color:white;
-    margin-top:10px;
+    color: white;
+    margin-top: 10px;
 }
 
 .profileForm {
-    width:30%;
+    width: 30%;
 }
 
 .reviewCard {
@@ -128,13 +121,13 @@ nav a{
     margin-right: 200px;
 }
 
-.swipeCard{
+.swipeCard {
     width: 400px;
     margin: auto;
 }
 
 
-.savedPlants{
+.savedPlants {
     padding-bottom: 200px;
 }
 
@@ -143,17 +136,21 @@ nav a{
     height: 3em;
     font-size: 18px;
 }
-h3{
-    margin-top:20px;
+
+h3 {
+    margin-top: 20px;
 }
+
 .form {
     margin-left: 16%;
 }
 
-.btn-success,.btn-danger{
-    margin:10px;
-    width:50%;
+.btn-success,
+.btn-danger {
+    margin: 10px;
+    width: 50%;
 }
+
 /* ! Resizing the images  */
 .card img {
     width: 400px;
@@ -166,7 +163,8 @@ h3{
 }
 
 
-.flashes,.notification {
+.flashes,
+.notification {
     background-color: white;
     color: black;
     text-align: center;
@@ -174,15 +172,16 @@ h3{
     list-style: none !important;
 }
 
-.notification,.messages{
-    background-color:black;
-    color:white;
-    list-style: none!important;
+.notification,
+.messages {
+    background-color: black;
+    color: white;
+    list-style: none !important;
 
 }
 
-.flashes2{
-    list-style: none!important;
+.flashes2 {
+    list-style: none !important;
 
 }
 
@@ -235,11 +234,21 @@ form button {
     width: 400px;
 }
 
-.plantImageDiv{
-    height:400px;
+/* !card  */
+div.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border: 1px solid black;
+    width: 350px;
 }
 
-#tutorialSwipe {
+.container {
     width: 400px;
-    margin: auto;
 }
+.card img {
+    width: 350px;
+    height: 326px;
+}
+

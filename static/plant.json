@@ -1,5 +1,4 @@
-[
-    {
+[{
         "id": 1,
         "species": "Echevaria",
         "image": "https://images.unsplash.com/photo-1513358130276-442a18340285?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1468&q=80",
@@ -19,7 +18,7 @@
         "id": 3,
         "species": "Phalaenopsis",
         "image": "https://images.unsplash.com/photo-1525697865770-2e858b5de2ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
-        "Difficulty":4,
+        "Difficulty": 4,
         "light": 2,
         "watering": 3
     },
@@ -27,7 +26,7 @@
         "id": 4,
         "species": "Sansevieria",
         "image": "https://cdn.shopify.com/s/files/1/0150/6262/products/the-sill_snake-plant-slaurentii_terracotta_4_1024x1024.jpg?v=1537308389",
-        "Difficulty":2,
+        "Difficulty": 2,
         "light": 1,
         "watering": 2
     },
@@ -35,7 +34,7 @@
         "id": 5,
         "species": "Dracaena Marginata",
         "image": "https://www.ikea.com/gb/en/images/products/dracaena-marginata-potted-plant-dragon-tree-2-stem__0653993_pe708222_s5.jpg",
-        "Difficulty":2,
+        "Difficulty": 2,
         "light": 3,
         "watering": 1
     },
@@ -43,7 +42,7 @@
         "id": 6,
         "species": "Ficus Microcara Ginseng",
         "image": "https://www.wiscontext.org/sites/default/files/assets/images/wasal-wpi-summer2018-agriculture-ginseng-plant.jpg",
-        "Difficulty":4,
+        "Difficulty": 4,
         "light": 2,
         "watering": 3
     },
@@ -108,7 +107,7 @@
         "species": "Hawthoria Zebra",
         "image": "https://cdn11.bigcommerce.com/s-oqm1pc/images/stencil/1280x1280/products/1163/1177/haworthia_fasciata_zebra_plant__44206.1410537454.jpg?c=2",
         "Difficulty": 1,
-        "light":5,
+        "light": 5,
         "watering": 1
     },
     {
@@ -116,7 +115,7 @@
         "species": "Spider Plant",
         "image": "https://images.homedepot-static.com/productImages/b14b6033-fbf3-40c8-94fc-9c49217980e9/svn/nearly-natural-artificial-plants-6846-64_1000.jpg",
         "Difficulty": 3,
-        "light":2,
+        "light": 2,
         "watering": 3
     },
     {
@@ -132,7 +131,7 @@
         "species": "Bonsai Schleffera",
         "image": "https://cdn11.bigcommerce.com/s-bhqinueo9m/images/stencil/1024x1024/products/14697/8088/hawaiian-umbrella-in-water-pot-medium-indoor-bonsai-dt0117alw__02248.1480631186.jpg?c=2",
         "Difficulty": 5,
-        "light":2,
+        "light": 2,
         "watering": 3
     },
     {
@@ -140,7 +139,7 @@
         "species": "Pincushion Cactus",
         "image": "https://cdn.shopify.com/s/files/1/0838/7447/products/image_09747bf7-43d0-40f9-9941-a13167b3e76e_1024x1024.jpg?v=1521005360",
         "Difficulty": 2,
-        "light":5,
+        "light": 5,
         "watering": 1
     },
     {
@@ -148,7 +147,7 @@
         "species": "Kalanchoe",
         "image": "https://5.imimg.com/data5/JL/FW/MY-42914277/1-500x500.jpg",
         "Difficulty": 2,
-        "light":5,
+        "light": 5,
         "watering": 1
     },
     {
@@ -156,7 +155,7 @@
         "species": "Jade Plant",
         "image": "https://cdn.gardenista.com/wp-content/uploads/2017/11/jade-tree-bryan-debus-flickr-1466x1466.jpg",
         "Difficulty": 2,
-        "light":4,
+        "light": 4,
         "watering": 1
     },
     {
@@ -164,7 +163,7 @@
         "species": "Aloe Vera",
         "image": "https://m2.ikea.com/PIAimages/0653982_PE708198_S5.JPG?f=s",
         "Difficulty": 2,
-        "light":5,
+        "light": 5,
         "watering": 1
     },
     {
@@ -172,7 +171,7 @@
         "species": "Whale Agave",
         "image": "https://www.anniesannuals.com/signs/a/images/agave_ovatifolia_giant_attribute_pieceofedenblogspot.jpg",
         "Difficulty": 4,
-        "light":5,
+        "light": 5,
         "watering": 1
     },
     {
@@ -180,7 +179,7 @@
         "species": "Peace Lily",
         "image": "https://cimages.prvd.com/is/image/ProvideCommerce/PP_18_PLA7139_PC2355_SHP_V1?$PLAProductImage$&wid=446",
         "Difficulty": 4,
-        "light":2,
+        "light": 2,
         "watering": 2
     },
     {
@@ -188,7 +187,7 @@
         "species": "Burro Tail",
         "image": "https://cdn.shopify.com/s/files/1/2318/5061/products/2_4_Pack_Sedum_Burrito_-_Burros_Tail_-_Donkey_Tail_2_inch_1024x1024.jpg?v=1540394799",
         "Difficulty": 3,
-        "light":4,
+        "light": 4,
         "watering": 1
     },
     {
@@ -196,7 +195,7 @@
         "species": "String Of Pearls",
         "image": "https://cdn.shopify.com/s/files/1/2198/4603/products/IMG_20170521_100331_2000x.jpg?v=1542183420",
         "Difficulty": 4,
-        "light":4,
+        "light": 4,
         "watering": 1
     }
 ]

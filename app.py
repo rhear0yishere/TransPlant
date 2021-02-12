@@ -9,7 +9,7 @@ from flask_cors import CORS
 import models
 from models import Review, userPlants, User
 
-from forms import ReviewForm, SignUpForm, LoginForm, PlantForm, EditReviewForm,EditProfileForm
+from forms import ReviewForm, SignUpForm, LoginForm, PlantForm, EditReviewForm, EditProfileForm
 
 
 app = Flask(__name__, static_url_path='/static')
@@ -46,7 +46,7 @@ def landingPage():
 @app.route('/swipe', methods=['GET', 'POST'])
 def swipePage(swipe=None):
     form3 = PlantForm()
-    form4 = EditProfileForm()     
+    form4 = EditProfileForm()
 
     if form3.validate_on_submit():
         models.userPlants.create(user=g.user._get_current_object(),
@@ -59,64 +59,61 @@ def swipePage(swipe=None):
 def stream(username=None):
     form = ReviewForm()
     form2 = EditReviewForm()
-    form4 = EditProfileForm()     
+    form4 = EditProfileForm()
 
     formData = form2.idNumber.data
 
-    user = models.User.select().where(models.User.username == current_user.username).get()
-    stream = user.stream.limit(100) 
-    stream2 = user.swipe.limit(100) 
+    user = models.User.select().where(
+        models.User.username == current_user.username).get()
+    stream = user.stream.limit(100)
+    stream2 = user.swipe.limit(100)
 
     if form2.validate_on_submit():
-        if form2.idNumber.data ==None:
+        if form2.idNumber.data == None:
             print("SAAAAAAAAAD")
         else:
-            intFormData= int(formData)
+            intFormData = int(formData)
             print(intFormData)
-            if Review.id==intFormData and  0< form.rating.data<6:
-                plant = Review.get(Review.id== (intFormData) )
-                plant.text= form2.text.data
-                plant.rating= form2.rating.data
+            if Review.id == intFormData and 0 < form.rating.data < 6:
+                plant = Review.get(Review.id == (intFormData))
+                plant.text = form2.text.data
+                plant.rating = form2.rating.data
                 plant.plant = form2.plant.data
                 plant.save()
-            else: 
-                flash("Could not edit review, please ensure you have filled out all the fields correctly")
+            else:
+                flash(
+                    "Could not edit review, please ensure you have filled out all the fields correctly")
 
+    return render_template('stream.html', stream=stream, stream2=stream2, form=form, form2=form2, form4=form4, username=username, user=user)
 
-            
-
-    return render_template('stream.html', stream=stream,stream2=stream2, form=form, form2= form2,form4=form4, username=username,user=user)
 
 @app.route('/create', methods=['POST'])
-def create_review(): 
-    form = ReviewForm()     
-    if form.validate_on_submit() and  0< form.rating.data<6:
+def create_review():
+    form = ReviewForm()
+    if form.validate_on_submit() and 0 < form.rating.data < 6:
         models.Review.create(user=g.user._get_current_object(),
-                                plant=form.plant.data,
-                                rating= form.rating.data,
-                                text=form.text.data)
+                             plant=form.plant.data,
+                             rating=form.rating.data,
+                             text=form.text.data)
         return redirect(url_for('stream'))
     else:
         flash("Could not submit review, please ensure you have filled out all the fields correctly")
         return redirect(url_for('stream'))
 
-       
-
 
 @app.route('/editProfile', methods=['POST'])
-def edit_profile(): 
-    form4 = EditProfileForm()     
+def edit_profile():
+    form4 = EditProfileForm()
     if form4.validate_on_submit():
         print("AYYYYO")
-        user = models.User.select().where(models.User.username == current_user.username).get()
+        user = models.User.select().where(
+            models.User.username == current_user.username).get()
         user.username = form4.username.data
         user.city = form4.city.data
         user.save()
         return redirect(url_for('stream'))
     else:
         return redirect(url_for('stream'))
-        
-
 
 
 @app.route('/delete', methods=['GET'])
@@ -126,7 +123,6 @@ def delete():
     if idNumber == Review.id:
         plant = Review.get(Review.id == idNumber)
         plant.delete_instance()
-
     return redirect(url_for('stream'))
 
 
@@ -138,9 +134,9 @@ def signupPage():
         models.User.create_user(
             username=form.username.data,
             email=form.email.data,
-            city= form.city.data,
+            city=form.city.data,
             password=form.password.data
-            )
+        )
         return redirect(url_for('landingPage'))
 
     return render_template('signup.html', form=form)
@@ -188,7 +184,7 @@ if __name__ == '__main__':
             username='rroy',
             email="rhea@rhea.com",
             password='password',
-            city= 'San Jose',
+            city='San Jose',
             admin=True
         )
     except ValueError:

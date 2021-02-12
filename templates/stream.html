@@ -3,125 +3,124 @@
 {% block content %}
 
 <div class="profileBackgroundImage ">
-<div class="main animated fadeInRight">
-<h1 >Hello<span><i class="fab fa-envira"></span></i> {{ user.username }}</h1>
-<h3>{{user.city}}</h3>
-</div>
+  <div class="main animated fadeInRight">
+    <h1>Hello<span><i class="fab fa-envira"></span></i> {{ user.username }}</h1>
+    <h3>{{user.city}}</h3>
+  </div>
 
 
-<span class ="editProfileSpan">
+  <span class="editProfileSpan">
 
-<form method="post" action="{{ url_for('edit_profile') }}" novalidate>
-    {{ form4.hidden_tag() }}
+    <form method="post" action="{{ url_for('edit_profile') }}" novalidate>
+      {{ form4.hidden_tag() }}
 
       {{ form4.username.label }}
 
-      <input class="form-control profileForm " id="username" name="username" type="text" value="{{ user.username }}">  
-    
+      <input class="form-control profileForm " id="username" name="username" type="text" value="{{ user.username }}">
+
       {{ form4.city.label }}
 
-      <input class="form-control profileForm city " id="city" name="city" type="text" value="{{ user.city }}">    
-      
-    {{ form4.submit4(class_="reviewButtons") }}
-    
-  </form>
-</span>
+      <input class="form-control profileForm city " id="city" name="city" type="text" value="{{ user.city }}">
 
-<button class='editProfileButton reviewButtons' >Edit Profile</button>
+      {{ form4.submit4(class_="reviewButtons") }}
 
-<h3 class= "temp"></h3>
-<h4>Happy Swiping.</h4>
+    </form>
+  </span>
+
+  <button class='editProfileButton reviewButtons'>Edit Profile</button>
+
+  <h3 class="temp"></h3>
+  <h4>Happy Swiping.</h4>
 
 
 
-<h1>My Plants and My Reviews</h1>
+  <h1>My Plants and My Reviews</h1>
 
-<div class= "reviewForm" >
-<form   method="post" action="{{ url_for('create_review') }}" novalidate>
-    {{ form.hidden_tag() }}
+  <div class="reviewForm">
+    <form method="post" action="{{ url_for('create_review') }}" novalidate>
+      {{ form.hidden_tag() }}
 
-    <div>
       <div>
-      {{ form.plant.label }}
-    </div>
-      {{ form.plant(class_="form-control ") }}
-    </div>
-    <div>
-      <div>
-      {{ form.rating.label }}
-    </div>
-      {{ form.rating(class_="form-control", type="number", min=1, max=5) }}
-    </div>
-    <div>
-      <div>
-      {{ form.text.label }}
+        <div>
+          {{ form.plant.label }}
+        </div>
+        {{ form.plant(class_="form-control ") }}
       </div>
-      {{ form.text(class_="form-control", rows="6") }}
-    </div>
+      <div>
+        <div>
+          {{ form.rating.label }}
+        </div>
+        {{ form.rating(class_="form-control", type="number", min=1, max=5) }}
+      </div>
+      <div>
+        <div>
+          {{ form.text.label }}
+        </div>
+        {{ form.text(class_="form-control", rows="6") }}
+      </div>
 
-    {{ form.submit(class_="reviewButtons") }}
-  </form>
+      {{ form.submit(class_="reviewButtons") }}
+    </form>
 
-  {% with messages3 = get_flashed_messages(with_categories=true) %}
-  {% if messages3 %}
+    {% with messages3 = get_flashed_messages(with_categories=true) %}
+    {% if messages3 %}
     <ul class=flashes2>
-    {% for category, message3 in messages3 %}
+      {% for category, message3 in messages3 %}
       <li class="{{ category }}">{{ message3 }}</li>
-    {% endfor %}
+      {% endfor %}
     </ul>
-  {% endif %}
-{% endwith %}
+    {% endif %}
+    {% endwith %}
 
-</div>
+  </div>
 
 
+  {% for reviews in stream %}
+  <div class="container d-flex justify-content-center">
+    <div class="card reviewCard d-flex align-items-center justify-content-center">
+      <div class="card-body reviewBackground">
+        <span class="mySpan">
+          <form method="POST" action="" novalidate>
+            {{ form2.hidden_tag() }}
 
-  
-{% for reviews in stream %}
-    <div class="container d-flex justify-content-center">
-        <div class="card reviewCard d-flex align-items-center justify-content-center">
-          <div class="card-body reviewBackground">
-            <span class="mySpan">
-                <form method="POST" action="" novalidate>
-                    {{ form2.hidden_tag() }}
-                
-                    <div>
-                      {{ form2.plant.label }}
-                      <input class="form-control" id="plant" name="plant" type="text" value="{{reviews.plant}}">
-                    </div>
-                    <div>
-                    {{ form.rating.label }}
-                    <input class="form-control rating" id="rating" name="rating" type="text" value="{{reviews.rating}}">
-                    </div>
-                    <div>
-                      {{ form2.text.label }}
-                      <input class="form-control" id="text" name="text" type="text" value="{{reviews.text}}">
-                    </div>
-                    <div>
-                        <input class="form-control" hidden="hidden"  id="idNumber" name="idNumber" type="text" value="{{reviews.id}}">
-                    </div>
-                    {{ form2.submit2(class_="reviewButtons") }}
-                    </form>
-                </span>
-                    <p class="card-text">Species: {{ reviews.plant }}</p>
-                    <p class="card-text ratingStar">Rating: {{ reviews.rating }}</p>
-                    <p class="card-text">Review: {{ reviews.text }}</p>
-          
-                    <button class='editButton reviewButtons ' >Edit</button>
-                    <a class= "reviewButtons"  href="{{url_for('delete', idNumber = reviews.id)}}" title="delete">Delete</a>
-              
-                  </div>
-          </div>
-    </div>   
-{% endfor %}
-<h2>Saved Plants</h2>
-<div class = "savedPlants">
-{% for userPlants in stream2 %}
+            <div>
+              {{ form2.plant.label }}
+              <input class="form-control" id="plant" name="plant" type="text" value="{{reviews.plant}}">
+            </div>
+            <div>
+              {{ form.rating.label }}
+              <input class="form-control rating" id="rating" name="rating" type="text" value="{{reviews.rating}}">
+            </div>
+            <div>
+              {{ form2.text.label }}
+              <input class="form-control" id="text" name="text" type="text" value="{{reviews.text}}">
+            </div>
+            <div>
+              <input class="form-control" hidden="hidden" id="idNumber" name="idNumber" type="text"
+                value="{{reviews.id}}">
+            </div>
+            {{ form2.submit2(class_="reviewButtons") }}
+          </form>
+        </span>
+        <p class="card-text">Species: {{ reviews.plant }}</p>
+        <p class="card-text ratingStar">Rating: {{ reviews.rating }}</p>
+        <p class="card-text">Review: {{ reviews.text }}</p>
+
+        <button class='editButton reviewButtons '>Edit</button>
+        <a class="reviewButtons" href="{{url_for('delete', idNumber = reviews.id)}}" title="delete">Delete</a>
+
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  <h2>Saved Plants</h2>
+  <div class="savedPlants">
+    {% for userPlants in stream2 %}
     <ul>
       <li>{{ userPlants.userPlants }}</li>
-    </ul>  
-{% endfor %}
-</div>
+    </ul>
+    {% endfor %}
+  </div>
 
 </div>
 
